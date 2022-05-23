@@ -1,11 +1,13 @@
 import React, { ButtonHTMLAttributes } from "react";
 import "./button.css";
+import "./dangerButtons.css";
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   btnType?: "primary" | "default" | "outlined" | "dashed" | "text" | "link";
   rounded?: boolean;
   shape?: "rectangle" | "round" | "circle";
   size?: "small" | "medium" | "large";
+  danger?: boolean;
 }
 
 const Button = ({ 
@@ -13,6 +15,7 @@ const Button = ({
   rounded = true,
   shape = "rectangle",
   size = "medium",
+  danger = false,
   ...rest 
 }: IButtonProps) => {
   return(
@@ -22,6 +25,7 @@ const Button = ({
         ${rounded && "rounded"}
         ${shape}
         ${size}
+        ${danger && "danger"}
       `} 
       {...rest}
     />

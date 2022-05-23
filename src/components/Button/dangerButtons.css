@@ -1,0 +1,103 @@
+button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  min-width: fit-content;
+  border: none;
+  cursor: pointer;
+  transition: all;
+  transition-duration: .3s;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+/* BTN TYPES */
+button.default.danger {
+  color: #372226;
+  background-color: rgba(128, 18, 51, 0.05);
+  border: 1px solid rgba(128, 18, 51, 0.05);
+}
+
+button.primary.danger {
+  color: #FFF;
+  background-color: #ff434c;
+  border: 1px solid #ff434c;
+}
+
+button.dashed.danger {
+  color: #242237;
+  background-color: transparent;
+  border: 1px dashed rgba(128, 18, 18, 0.3);
+}
+
+button.outlined {
+  color: #FFF;
+  background-color: transparent;
+  border: 1px solid #FFF;
+}
+
+button.text {
+  color: #242237;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+button.link.danger {
+  color: #ff434c;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+button.outlined.danger:hover {
+  color: #ff434c;
+  background-color: transparent;
+  border: 1px solid #ff434c;
+}
+
+button.dashed.danger:hover {
+  color: #ff434c;
+  background-color: transparent;
+  border: 1px dashed #ff434c;
+}
+
+button.text:hover {
+  color: #242237;
+  background-color: rgba(18, 71, 128, 0.05);
+  border: 1px solid rgba(18, 71, 128, 0.05);
+}
+
+/* BORDER RADIUS */
+button.rounded {
+  border-radius: .25rem;
+}
+
+/* SHAPE */
+button.round {
+  border-radius: 1.2rem;
+}
+
+button.circle {
+  border-radius: 5rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+/* SIZES */
+button.small {
+  padding-left: .8rem;
+  padding-right: .8rem;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+}
+
+button.large {
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+}
