@@ -11,6 +11,15 @@ module.exports = {
         angelRedP5: "rgba(128, 18, 51, 0.05)",
         angelRedM: "#ff434c",
       },
+      backgroundColor: {
+        angel: "#439EFF",
+        angelBlack: "#242237",
+        angelBlackP5: "rgba(18, 71, 128, 0.05)",
+        angelBlueP3: "rgba(18, 71, 128, 0.3)",
+        angelRedP3: "rgba(128, 18, 18, 0.3)",
+        angelRedM: "#ff434c",
+
+      },
       borderColor: {
         angel: "#439EFF",
         angelBlack: "#242237",
