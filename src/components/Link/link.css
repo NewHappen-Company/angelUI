@@ -1,0 +1,35 @@
+a {
+  transition: all;
+  transition-duration: .3s;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover {
+  opacity: .6;
+}
+
+/* LINK WEIGTHS */
+
+a.regular {
+  font-weight: normal;
+}
+
+a.semibold {
+  font-weight: 600;
+}
+
+
+
+/* LINK COLORS */
+
+a.white {
+  color: #fff;
+}
+
+a.blue {
+  color: #439EFF;
+}
+
+
