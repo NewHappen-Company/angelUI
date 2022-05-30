@@ -29,6 +29,6 @@ MediumButton.args = {
 export const LargeButton = Template.bind({});
 LargeButton.args = {
   btnType: "primary",
-  children: "Medium Button",
+  children: "Large Button",
   size: "large"
 };
