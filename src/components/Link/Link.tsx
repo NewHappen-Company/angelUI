@@ -4,7 +4,7 @@ export interface ILinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   color?: "white" | "blue";
   fontFamily?: string;
   fontWeight?: "semibold" | "regular";
-  textDecoration?: "none";
+  textDecoration?: string;
   fontSize?: string;
 }
 
@@ -12,7 +12,7 @@ const Link = ({
   color = "blue",
   fontFamily = "font-Poppins",
   fontWeight = "regular",
-  textDecoration = "none",
+  textDecoration = "no-underline",
   fontSize = "text-md",
   ...rest
 }: ILinkProps) => {
@@ -21,7 +21,6 @@ const Link = ({
   //  LINK WIGHTS
   const regular = `font-normal`;
   const semibold = `font-semibold`;
-  const font = `${fontFamily}`;
 
   const white = `text-white`;
   const blue = `text-angel`;
@@ -30,7 +29,7 @@ const Link = ({
     <a
       className={`
         ${style} 
-        ${fontFamily === "Poppins" ? font : ""}
+        ${fontFamily}
         ${
           fontWeight === "regular"
             ? regular

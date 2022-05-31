@@ -18,7 +18,6 @@ const BannerMkt = ({
 }: IBannerMktProps) => {
   const divStyle = `bg-angelBlack py-8 ${height} ${width} flex justify-center items-center`;
   const textStyle = `text-white font-normal ${fontSize}`;
-  const font = `${fontFamily}`;
 
   return (
     <div
@@ -30,7 +29,7 @@ const BannerMkt = ({
       <h3
         className={`
       ${textStyle} 
-      ${fontFamily === "Poppins" ? font : ""}
+      ${fontFamily}
     `}
         {...rest}
       />
