@@ -6,6 +6,7 @@ module.exports = {
         angel: "#439EFF",
         angelBlack: "#242237",
         angelBlackP5: "rgba(18, 71, 128, 0.05)",
+        angelBlack2: "#272727",
         angelBlueP3: "rgba(18, 71, 128, 0.3)",
         angelRed: "#372226",
         angelRedP5: "rgba(128, 18, 51, 0.05)",
