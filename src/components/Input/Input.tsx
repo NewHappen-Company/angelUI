@@ -7,8 +7,8 @@ export interface ILinkProps extends InputHTMLAttributes<HTMLInputElement> {
   phC?: string;
   w?: string;
   width?: string;
-  h?: string;
-  height?: string;
+  h: 'h-10' | 'h-40' | 'h-56' | 'h-64' | 'h-96';
+  height: 'h-10' | 'h-40' | 'h-56' | 'h-64' | 'h-96';
 }
 
 const Input = ({
@@ -22,13 +22,15 @@ const Input = ({
   ...rest
 }: ILinkProps) => {
   let placeholderColor = `placeholder-${phC}`;
-  const style = `p-4 pb-2 pt-2 rounded font-Poppins ${fontSize} outline-none ${bg} ${w || width} ${h || height}`;
+  const style = `p-4 pb-2 pt-2 rounded font-Poppins ${fontSize} outline-none ${bg} ${w || width}`;
+  let defaults = `${bg} ${w || width} ${h || "h-56"}`;
 
   return (
     <input
       className={`
         ${style} 
         ${placeholderColor || "placeholder-angelGray"}
+        ${h || height}
       `}
       {...rest}
     />
