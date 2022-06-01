@@ -1,5 +1,4 @@
 import React, { ButtonHTMLAttributes } from "react";
-import '../../styles/tailwind.css';
 
 export interface IInputSimulatorProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
