@@ -1,5 +1,5 @@
 import React, { AnchorHTMLAttributes } from "react";
-import "../../../styles/angel.ts";
+ 
 
 export interface ILinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   color?: "white" | "blue";

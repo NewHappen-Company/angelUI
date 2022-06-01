@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from "react";
-import "../../../styles/angel.ts";
+ 
 
 export interface IRowProps extends HTMLAttributes<HTMLDivElement> {
   verticalAlign?: 'start' | 'end' | 'center' | 'baseline' |  'stretch';

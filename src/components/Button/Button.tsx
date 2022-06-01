@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from "react";
-import "../../../styles/angel.ts";
+import '../../styles/angel';
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   btnType?: "primary" | "default" | "outlined" | "dashed" | "text" | "link";
