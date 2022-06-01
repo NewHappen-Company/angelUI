@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from "react";
- 
+import '../../styles/angel';
 
 export interface IColumnProps extends HTMLAttributes<HTMLDivElement> {
   horizontalAlign?: 'start' | 'end' | 'center' | 'baseline' |  'stretch';

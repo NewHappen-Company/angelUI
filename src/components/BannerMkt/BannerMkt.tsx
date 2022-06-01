@@ -1,4 +1,5 @@
 import React, { HTMLAttributes } from "react";
+import '../../styles/angel';
 
 export interface IBannerMktProps extends HTMLAttributes<HTMLDivElement> {
   backgroundColor?: "#242237";

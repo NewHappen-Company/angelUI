@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from "react";
- 
+import '../../styles/angel';
 
 export interface IInputSimulatorProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;

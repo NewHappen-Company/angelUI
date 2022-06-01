@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes } from "react";
- 
+import '../../styles/angel';
 
 export interface ILinkProps extends InputHTMLAttributes<HTMLInputElement> {
   fontSize?: string;
