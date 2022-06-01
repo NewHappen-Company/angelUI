@@ -10,6 +10,8 @@ module.exports = {
         angelRed: "#372226",
         angelRedP5: "rgba(128, 18, 51, 0.05)",
         angelRedM: "#ff434c",
+        angelGrayC4: "#C4C4C4",
+        angelGrayE2: "#E2E2E2",
       },
       backgroundColor: {
         angel: "#439EFF",
@@ -18,7 +20,6 @@ module.exports = {
         angelBlueP3: "rgba(18, 71, 128, 0.3)",
         angelRedP3: "rgba(128, 18, 18, 0.3)",
         angelRedM: "#ff434c",
-
       },
       borderColor: {
         angel: "#439EFF",
