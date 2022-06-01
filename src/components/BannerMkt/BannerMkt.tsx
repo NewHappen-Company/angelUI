@@ -12,7 +12,7 @@ const BannerMkt = ({
   fontFamily = "font-Poppins",
   backgroundColor = "#242237",
   width = "w-full",
-  height = "0",
+  height = "h-0",
   fontSize = "text-md",
   ...rest
 }: IBannerMktProps) => {
