@@ -33,6 +33,7 @@ const Button = ({
   mr,
   minHeight,
   minWidth,
+  bg,
   btnType = "default",
   rounded = true,
   shape = "rectangle",
@@ -75,7 +76,7 @@ const Button = ({
   const smallSize = "text-sm pt-[.3rem] pb-[.3rem] pl-[.8rem] pr-[.8rem]";
   const largeSize = "text-lg pt-[.8rem] pb-[.8rem] pl-[1.3rem] pr-[1.3rem]";
 
-  let defaults = `${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
+  let defaults = `${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
   return (
     <button

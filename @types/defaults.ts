@@ -26,4 +26,6 @@ export default interface IDefaultProps {
   mr?: 'mr-0' | 'mr-px' | 'mr-0.5' | 'mr-1' | 'mr-1.5' | 'mr-2' | 'mr-2.5' | 'mr-3' | 'mr-3.5' | 'mr-4' | 'mr-5' | 'mr-6' | 'mr-7' | 'mr-8' | 'mr-9' | 'mr-10';
   mb?: 'mb-0' | 'mb-px' | 'mb-0.5' | 'mb-1' | 'mb-1.5' | 'mb-2' | 'mb-2.5' | 'mb-3' | 'mb-3.5' | 'mb-4' | 'mb-5' | 'mb-6' | 'mb-7' | 'mb-8' | 'mb-9' | 'mb-10';
   ml?: 'ml-0' | 'ml-px' | 'ml-0.5' | 'ml-1' | 'ml-1.5' | 'ml-2' | 'ml-2.5' | 'ml-3' | 'ml-3.5' | 'ml-4' | 'ml-5' | 'ml-6' | 'ml-7' | 'ml-8' | 'ml-9' | 'ml-10';
+
+  bg?: 'bg-black' | 'bg-white' | 'bg-angel' | 'bg-angelWhite' | 'bg-angelYellow' | 'bg-angelRedM' | string;
 }
