@@ -8,6 +8,12 @@
 
 <br>
 
+<p align="center">
+  <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/angel_ui"/>
+  <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/NewHappen-Company/angelUI.svg?logo=lgtm&logoWidth=18"/>
+  <img alt="MIT License" src="https://img.shields.io/github/license/NewHappen-Company/angelUI"/>
+</p>
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people
