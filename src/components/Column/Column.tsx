@@ -1,4 +1,5 @@
 import React, { HTMLAttributes } from "react";
+import IDefaultProps from "../../../@types/defaults";
 import '../../styles/angel';
 
 export interface IColumnProps extends HTMLAttributes<HTMLDivElement> {
@@ -6,25 +7,39 @@ export interface IColumnProps extends HTMLAttributes<HTMLDivElement> {
   verticalAlign?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
   reverse?: boolean; 
   bg?: string; 
-  w?: string;
-  width?: string;
-  h?: string;
-  height?: string;
 }
 
+type IAngelColumnProps = IColumnProps & IDefaultProps;
+
 const Column = ({
+  h,
+  w = "w-full",
+  maxHeight,
+  maxWidth,
+  p,
+  px,
+  py,
+  pt,
+  pb,
+  pl,
+  pr,
+  m,
+  mx,
+  my,
+  mt,
+  mb,
+  ml,
+  mr,
+  minHeight,
+  minWidth,
   reverse = false,
   horizontalAlign = 'center',
   verticalAlign = 'start',
-  h = "h-auto",
-  height,
-  w = "w-full",
-  width,
   bg = "bg-transparent",
   ...rest
-}: IColumnProps) => {
+}: IAngelColumnProps) => {
   const style = `flex ${reverse ? 'flex-col-reverse' : 'flex-col'}`;
-  let defaults = `${bg} ${w || width} ${h || height}`;
+  let defaults = `${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
   return (
     <div
