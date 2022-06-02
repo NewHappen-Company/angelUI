@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">The UIKit of angels 👼</h1>
+<h1 align="center">Build your React App's with the UIKit of angels 👼</h1>
 
 <br>
 
