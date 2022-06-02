@@ -11,7 +11,7 @@ export default interface IDefaultProps {
   minHeight?: 'min-h-0' | 'min-h-full' | 'min-h-min' | 'min-h-max' | 'min-h-fit';
   maxHeight?: 'max-h-0' | 'max-h-px' | 'max-h-0.5' | 'max-h-1' | 'max-h-1.5' | 'max-h-2' | 'max-h-2.5' | 'max-h-3' | 'max-h-3.5' | 'max-h-4' | 'max-h-5' | 'max-h-6' | 'max-h-7' | 'max-h-8' | 'max-h-9' | 'max-h-10' | 'max-h-11' | 'max-h-12' | 'max-h-14' | 'max-h-16' | 'max-h-20' | 'max-h-24' | 'max-h-28' | 'max-h-32' | 'max-h-36' | 'max-h-40' | 'max-h-44' | 'max-h-48' | 'max-h-52' | 'max-h-56' | 'max-h-60' | 'max-h-64' | 'max-h-72' | 'max-h-80' | 'max-h-96' | 'max-h-full' | 'max-h-screen' | 'max-h-min' | 'max-h-max' | 'max-h-fit';
 
-  p?: 'm-0' | 'p-px' | 'p-0.5' | 'p-1' | 'p-1.5' | 'p-2' | 'p-2.5' | 'p-3' | 'p-3.5' | 'p-4' | 'p-5' | 'p-6' | 'p-7' | 'p-8' | 'p-9' | 'p-10';
+  p?: 'p-0' | 'p-px' | 'p-0.5' | 'p-1' | 'p-1.5' | 'p-2' | 'p-2.5' | 'p-3' | 'p-3.5' | 'p-4' | 'p-5' | 'p-6' | 'p-7' | 'p-8' | 'p-9' | 'p-10';
   px?: 'px-0' | 'px-px' | 'px-0.5' | 'px-1' | 'px-1.5' | 'px-2' | 'px-2.5' | 'px-3' | 'px-3.5' | 'px-4' | 'px-5' | 'px-6' | 'px-7' | 'px-8' | 'px-9' | 'px-10';
   py?: 'py-0' | 'py-px' | 'py-0.5' | 'py-1' | 'py-1.5' | 'py-2' | 'py-2.5' | 'py-3' | 'py-3.5' | 'py-4' | 'py-5' | 'py-6' | 'py-7' | 'py-8' | 'py-9' | 'py-10';
   pt?: 'pt-0' | 'pt-px' | 'pt-0.5' | 'pt-1' | 'pt-1.5' | 'pt-2' | 'pt-2.5' | 'pt-3' | 'pt-3.5' | 'pt-4' | 'pt-5' | 'pt-6' | 'pt-7' | 'pt-8' | 'pt-9' | 'pt-10';
