@@ -22,16 +22,6 @@ export default [
       },
     ],
     plugins: [
-      postcss({
-        config: {
-          path: "./postcss.config.js",
-        },
-        extensions: [".css"],
-        minimize: true,
-        inject: {
-          insertAt: "top",
-        },
-      }),
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
@@ -42,6 +32,6 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: ["react", "react-dom"],
+    external: [/\.css$/],
   },
 ];

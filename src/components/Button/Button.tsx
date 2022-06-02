@@ -1,4 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
+import IDefaultProps from "../../../@types/defaults";
+import '../../styles/angel';
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   btnType?: "primary" | "default" | "outlined" | "dashed" | "text" | "link";
@@ -8,14 +10,36 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   danger?: boolean;
 }
 
+type IAngelButtonProps = IButtonProps & IDefaultProps;
+
 const Button = ({
+  h,
+  w,
+  maxHeight,
+  maxWidth,
+  p,
+  px,
+  py,
+  pt,
+  pb,
+  pl,
+  pr,
+  m,
+  mx,
+  my,
+  mt,
+  mb,
+  ml,
+  mr,
+  minHeight,
+  minWidth,
   btnType = "default",
   rounded = true,
   shape = "rectangle",
   size = "medium",
   danger = false,
   ...rest
-}: IButtonProps) => {
+}: IAngelButtonProps) => {
   const style =
     "pl-4 pr-4 pt-2 pb-2 min-w-fit border-solid border-0 pointer transition-all duration-300 hover:opacity-75";
 
@@ -51,6 +75,8 @@ const Button = ({
   const smallSize = "text-sm pt-[.3rem] pb-[.3rem] pl-[.8rem] pr-[.8rem]";
   const largeSize = "text-lg pt-[.8rem] pb-[.8rem] pl-[1.3rem] pr-[1.3rem]";
 
+  let defaults = `${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
+
   return (
     <button
       className={`
@@ -73,6 +99,7 @@ const Button = ({
           shape === "round" ? roundShape : shape === "circle" ? circleShape : ""
         }
         ${size === "small" ? smallSize : size === "large" ? largeSize : ""}
+        ${defaults}
       `}
       {...rest}
     />
