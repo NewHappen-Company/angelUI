@@ -1,3 +1,13 @@
+<p align="center">
+  <a href="https://github.com/NewHappen-Company/angelUI">
+    <img src="https://raw.githubusercontent.com/NewHappen-Company/angelUI/main/logo/angelLogo-colored@2x.png?raw=true" alt="Angel logo" width="300" />
+  </a>
+</p>
+
+<h1 align="center">The UIKit of angels 👼</h1>
+
+<br>
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people
