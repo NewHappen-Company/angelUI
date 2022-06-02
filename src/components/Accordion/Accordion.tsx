@@ -1,10 +1,9 @@
 import React, { Children, HTMLAttributes, ReactNode } from "react";
 import Button from "../Button";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import IDefaultProps from "../../../@types/defaults";
 
 export interface IAccordionProps extends HTMLAttributes<HTMLDivElement> {
-  height?: string;
-  width?: string;
   text?: ReactNode;
   children?: ReactNode;
   color?: string;
@@ -13,9 +12,29 @@ export interface IAccordionProps extends HTMLAttributes<HTMLDivElement> {
   border?: "border-b" | "border-0";
 }
 
+type IAngelAccordionProps = IAccordionProps & IDefaultProps;
+
 const Accordion = ({
-  height = "h-full",
-  width = "w-full",
+  h = "h-full",
+  w = "w-full",
+  maxHeight,
+  maxWidth,
+  p,
+  px,
+  py,
+  pt,
+  pb,
+  pl,
+  pr,
+  m,
+  mx,
+  my,
+  mt,
+  mb,
+  ml,
+  mr,
+  minHeight,
+  minWidth,
   color = "text-white",
   titleFontSize = "text-2xl",
   textFontSize = "text-dm",
@@ -23,10 +42,12 @@ const Accordion = ({
   children,
   text,
   ...rest
-}: IAccordionProps) => {
-  const style = `${border} border-solid ${height} ${width} ${color}`;
+}: IAngelAccordionProps) => {
+  const style = `${border} border-solid ${color}`;
   const titleDivstyle = `flex justify-between items-center font-bold ${titleFontSize}`;
   const textDivStyle = `${textFontSize} p-2 text-justify`;
+
+  let defaults = `${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
   const [click, setClick] = React.useState(false);
 
@@ -38,6 +59,7 @@ const Accordion = ({
     <div
       className={`
         ${style} 
+        ${defaults}
       `}
       {...rest}
     >
