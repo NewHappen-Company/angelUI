@@ -12,6 +12,11 @@ module.exports = {
         angelRedM: "#ff434c",
         angelGrayC4: "#C4C4C4",
         angelGrayE2: "#E2E2E2",
+        angelWhite: "#F6F6F6",
+        angelYellowDark: "#B98C15",
+        angelYellow: "#FECF56",
+        angelBlueDark: "#3172B7",
+        angelBlue: "#D7EAFF"
       },
       backgroundColor: {
         angel: "#439EFF",
@@ -20,6 +25,11 @@ module.exports = {
         angelBlueP3: "rgba(18, 71, 128, 0.3)",
         angelRedP3: "rgba(128, 18, 18, 0.3)",
         angelRedM: "#ff434c",
+        angelWhite: "#F6F6F6",
+        angelYellowDark: "#B98C15",
+        angelYellow: "#FECF56",
+        angelBlueDark: "#3172B7",
+        angelBlue: "#D7EAFF"
       },
       borderColor: {
         angel: "#439EFF",
@@ -36,7 +46,10 @@ module.exports = {
         angelBlackP5: "rgba(18, 71, 128, 0.05)",
         angelBlueP3: "rgba(18, 71, 128, 0.3)",
         angelRed: "#372226",
+        angelRedM: "#ff434c",
         angelRedP5: "rgba(128, 18, 51, 0.05)",
+        angelGray: "#C2C2C2",
+        angelYellow: "#B98C15"
       },
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
