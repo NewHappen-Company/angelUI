@@ -20,7 +20,7 @@ StartRow.args = {
   bg: 'bg-angelWhite',
   h: 'h-12',
   children: <>
-    <Button btnType="primary" size="small">Button 1</Button>
+    <Button btnType="primary" size="small" mr="mr-2">Button 1</Button>
     <Button btnType="primary" size="small">Button 2</Button>
   </>
 };

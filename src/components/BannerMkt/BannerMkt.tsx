@@ -1,24 +1,45 @@
 import React, { HTMLAttributes } from "react";
+import IDefaultProps from "../../../@types/defaults";
 import '../../styles/angel';
 
 export interface IBannerMktProps extends HTMLAttributes<HTMLDivElement> {
   backgroundColor?: "#242237";
-  width?: string;
-  height?: string;
   fontFamily?: string;
   fontSize?: string;
 }
 
+type IAngelBannerMktProps = IBannerMktProps & IDefaultProps;
+
 const BannerMkt = ({
+  w = "w-full",
+  h = "h-0",
+  maxHeight,
+  maxWidth,
+  p,
+  px,
+  py,
+  pt,
+  pb,
+  pl,
+  pr,
+  m,
+  mx,
+  my,
+  mt,
+  mb,
+  ml,
+  mr,
+  minHeight,
+  minWidth,
   fontFamily = "font-Poppins",
   backgroundColor = "#242237",
-  width = "w-full",
-  height = "0",
   fontSize = "text-md",
   ...rest
-}: IBannerMktProps) => {
-  const divStyle = `bg-angelBlack py-8 ${height} ${width} flex justify-center items-center`;
+}: IAngelBannerMktProps) => {
+  const divStyle = `bg-angelBlack py-8 ${h} ${w} flex justify-center items-center`;
   const textStyle = `text-white font-normal ${fontSize}`;
+
+  let defaults = `${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
   return (
     <div
@@ -31,6 +52,7 @@ const BannerMkt = ({
         className={`
       ${textStyle} 
       ${fontFamily}
+      ${defaults}
     `}
         {...rest}
       />
