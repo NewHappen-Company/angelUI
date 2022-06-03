@@ -75,7 +75,7 @@ const Input = ({
         className={`${defaults}
   ${fieldset}`}
       >
-        <legend className={`text-sm font-Poppins ${click ? "text-angel" : "text-angelGray"} px-1`}>
+        <legend className={`text-sm font-Poppins ${click ? "text-angel" : "legends-Gray"} px-1`}>
           {legend || "Label"}
         </legend>
         <input
