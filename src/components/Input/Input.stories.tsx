@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args}>{args.
 export const MainInput = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 MainInput.args = {
+  legend: "Input",
   placeholder: "Ex:. Nome completo",
   w: "w-64"
 };
