@@ -51,12 +51,12 @@ const Input = ({
   const style = `p-4 pb-2 pt-2 rounded font-Poppins ${fontSize} outline-none`;
   let defaults = `${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
-  const fieldset = `px-4 pb-3 pt-1.5 rounded font-Poppins ${fontSize} outline-none border-solid ${
+  const fieldset = `transition-colors duration-500 px-4 pb-3 pt-1.5 rounded font-Poppins ${fontSize} outline-none border-solid ${
     isActive ? `${borderActiveColor} border-2` : "border-transparent border-2"
   }`;
-  const style2 = `font-Poppins ${fontSize} outline-none`;
+  const style2 = `font-Poppins ${fontSize} outline-none w-full `;
   let defaults2 = `${bg} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight}`;
-  let legendStyle = `text-sm font-Poppins ${isActive ? legendActiveColor : "legends-Gray"} px-1`
+  let legendStyle = `text-sm font-Poppins transition-colors duration-500 ${isActive ? legendActiveColor : "legends-Gray"} px-1`
 
   if (!isFieldset) {
     return (

@@ -1,7 +1,8 @@
-import React, { Children, HTMLAttributes, ReactNode } from "react";
+import React, { Children, HTMLAttributes, ReactNode, useRef } from "react";
 import Button from "../Button";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
 import IDefaultProps from "../../../@types/defaults";
+import { Property } from "csstype";
 
 export interface IAccordionProps extends HTMLAttributes<HTMLDivElement> {
   text?: ReactNode;
@@ -43,17 +44,25 @@ const Accordion = ({
   text,
   ...rest
 }: IAngelAccordionProps) => {
-  const style = `${border} border-solid ${color}`;
-  const titleDivstyle = `flex justify-between items-center font-bold ${titleFontSize}`;
-  const textDivStyle = `${textFontSize} p-2 text-justify`;
+  const [click, setClick] = React.useState(false);
+
+  const chevron = click
+    ? `transition-transform duration-300 transform rotate-180`
+    : `transition-transform duration-300 transform`;
+
+  const style = `${border} border-solid ${color} `;
+  const titleDivstyle = `flex justify-between items-center font-bold ${titleFontSize} flex justify-between`;
+  const textDivStyle = `${textFontSize} pt-2 px-2 text-justify overflow-hidden max-h-0 transition-all duration-300 flex mb-2`;
 
   let defaults = `${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
-
-  const [click, setClick] = React.useState(false);
 
   const handleClick = () => {
     setClick(!click);
   };
+
+  const refTab = useRef<HTMLDivElement>(null);
+  const tabHeight = refTab.current?.scrollHeight;
+  console.log(tabHeight);
 
   return (
     <div
@@ -66,14 +75,15 @@ const Accordion = ({
       <div className={titleDivstyle} {...rest}>
         {text}
         <Button btnType="text" shape="circle" onClick={handleClick}>
-          {click ? (
-            <BsChevronUp style={{ fill: "white" }} />
-          ) : (
-            <BsChevronDown style={{ fill: "white" }} />
-          )}
+          <BsChevronDown style={{ fill: "white" }} className={chevron} />
         </Button>
       </div>
-      <div className={click ? textDivStyle : "hidden"} {...rest}>
+      <div
+        ref={refTab}
+        className={textDivStyle}
+        style={{ maxHeight: click ? `${tabHeight}px` : "10px" }}
+        {...rest}
+      >
         {children}
       </div>
     </div>
