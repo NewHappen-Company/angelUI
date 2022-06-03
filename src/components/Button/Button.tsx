@@ -50,7 +50,7 @@ const Button = ({
   } border ${danger ? "bg-angelRedP5" : "border-angelBlackP5"}`;
   const primaryType = `text-white ${
     danger ? "bg-angelRedM" : "bg-angel"
-  } border ${danger ? "bg-angelRedM" : "border-angel"}`;
+  } border ${danger ? "bg-angelRedM" : bg ? bg : "border-angel"}`;
   const dashedType = `text-angelBlack bg-transparent border-dashed border ${
     danger ? "border-angelRedP3" : "border-angelBlueP3"
   } ${danger ? "hover:text-angelRedM" : "hover:text-angel"} ${
