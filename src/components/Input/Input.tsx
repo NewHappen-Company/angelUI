@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, ReactNode } from "react";
+import React, { InputHTMLAttributes, useState } from "react";
 import IDefaultProps from "../../../@types/defaults";
 import "../../styles/angel";
 
@@ -8,6 +8,9 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   phC?: string;
   legend?: string;
   isFieldset?: boolean;
+
+  // FIELDSET
+  click?: boolean;
 }
 
 type IAngelInputProps = IInputProps & IDefaultProps;
@@ -38,19 +41,15 @@ const Input = ({
   phC = "angelGray",
   legend,
   isFieldset,
+  click,
   ...rest
-}: IAngelInputProps) => {
+}: IAngelInputProps) => {  
   let placeholderColor = `placeholder-${phC}`;
   const style = `p-4 pb-2 pt-2 rounded font-Poppins ${fontSize} outline-none`;
   let defaults = `${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
   // FIELDSET
 
-  const [click, setClick] = React.useState(false);
-
-  const handleClick = () => {
-    setClick(!click);
-  };
 
   const fieldset = `px-4 pb-3 pt-1.5 rounded font-Poppins ${fontSize} outline-none border-solid ${
     click ? "border-angel border-2" : "border-transparent border-2"
@@ -79,8 +78,6 @@ const Input = ({
           {legend || "Label"}
         </legend>
         <input
-          onFocus={handleClick}
-          onBlur={handleClick}
           className={`
 
         ${style2}
