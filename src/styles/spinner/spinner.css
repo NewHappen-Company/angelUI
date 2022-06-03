@@ -1,0 +1,110 @@
+.spinner-ring-sm {
+  display: inline-block;
+  position: relative;
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-right: .5rem;
+}
+.spinner-ring-sm div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 0.78rem;
+  height: 0.78rem;
+  margin: .15rem;
+  border: .15rem solid #fff;
+  border-radius: 50%;
+  animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.spinner-ring-sm div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner-ring-sm div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner-ring-sm div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-ring-md {
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+}
+.spinner-ring-md div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: .15rem;
+  border: .15rem solid #fff;
+  border-radius: 50%;
+  animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.spinner-ring-md div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner-ring-md div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner-ring-md div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-ring-lg {
+  display: inline-block;
+  position: relative;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: .5rem;
+}
+.spinner-ring-lg div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin: .15rem;
+  border: .15rem solid #fff;
+  border-radius: 50%;
+  animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.spinner-ring-lg div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner-ring-lg div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner-ring-lg div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
