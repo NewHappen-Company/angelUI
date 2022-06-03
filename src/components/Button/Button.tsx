@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
 import IDefaultProps from "../../../@types/defaults";
+import { useLoadingButton } from "../../hooks/src/useLoadingButton";
 import '../../styles/angel';
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,6 +9,8 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   shape?: "rectangle" | "round" | "circle";
   size?: "small" | "medium" | "large";
   danger?: boolean;
+  isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 type IAngelButtonProps = IButtonProps & IDefaultProps;
@@ -39,8 +42,12 @@ const Button = ({
   shape = "rectangle",
   size = "medium",
   danger = false,
+  isDisabled = false,
+  isLoading = false,
   ...rest
 }: IAngelButtonProps) => {
+  const { styleLoading } = useLoadingButton();
+
   const style =
     "pl-4 pr-4 pt-2 pb-2 min-w-fit border-solid border-0 pointer transition-all duration-300 hover:opacity-75";
 
@@ -77,6 +84,10 @@ const Button = ({
   const largeSize = "text-lg pt-[.8rem] pb-[.8rem] pl-[1.3rem] pr-[1.3rem]";
 
   let defaults = `${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
+  let states = `${isDisabled && 'cursor-not-allowed opacity-75'} ${isLoading && styleLoading}`
+
+  // SPINNER
+  let spinnerStyles = `${size === 'small' ? 'spinner-ring-sm' : size === 'medium' ? 'spinner-ring-md' : size === 'large' ? 'spinner-ring-lg' : 'spinner-ring-sm'}`
 
   return (
     <button
@@ -101,9 +112,14 @@ const Button = ({
         }
         ${size === "small" ? smallSize : size === "large" ? largeSize : ""}
         ${defaults}
+        ${states}
       `}
+      disabled={isDisabled || isLoading}
       {...rest}
-    />
+    >
+      { isLoading && <div className={`${spinnerStyles}`}><div></div><div></div><div></div><div></div></div> }
+      {rest.children}
+    </button>
   );
 };
 
