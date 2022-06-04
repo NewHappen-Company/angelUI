@@ -54,7 +54,8 @@ const Input = ({
   const fieldset = `transition-colors duration-500 px-4 pb-3 pt-1.5 rounded font-Poppins ${fontSize} outline-none border-solid ${
     isActive ? `${borderActiveColor} border-2` : "border-transparent border-2"
   }`;
-  const style2 = `font-Poppins ${fontSize} outline-none w-full `;
+  
+  const style2 = `font-Poppins ${fontSize} outline-none w-full`;
   let defaults2 = `${bg} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight}`;
   let legendStyle = `text-sm font-Poppins transition-colors duration-500 ${isActive ? legendActiveColor : "legends-Gray"} px-1`
 
