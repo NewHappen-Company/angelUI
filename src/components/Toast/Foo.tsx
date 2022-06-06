@@ -11,17 +11,17 @@ export default function Foo() {
   const {addToast} = useToast();
 
   function handleClick() {
-    // setIsLoading(true);
+    setIsLoading(true);
     addToast({
       title: text || 'Title',
       description: textII || 'Description',
       position: "top-right",
-      duration: 30000,
+      duration: 3000,
       withDecorator: true,
     });
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }
 
   return (
