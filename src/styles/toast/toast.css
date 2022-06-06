@@ -1,0 +1,23 @@
+.toasts-wrapper-top-left {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+.toasts-wrapper-top-right {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.toasts-wrapper-bottom-left {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.toasts-wrapper-bottom-right {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
