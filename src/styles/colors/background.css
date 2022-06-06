@@ -1,3 +1,15 @@
+.bg-angelBlue\.05 {
+  background-color: #f0f8ff;
+}
+
+.bg-angelBlue\.25Full {
+  background-color: #70A4D4;
+}
+
+.bg-angelBlue\.25 {
+  background-color: rgba(112, 164, 212, .24);
+}
+
 .bg-angelYellow {
   background-color: #FFB800;
   border-color: #FFB800;
