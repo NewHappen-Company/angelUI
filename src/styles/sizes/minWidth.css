@@ -17,3 +17,7 @@
 .min-w-fit {
   min-width: fit-content;
 }
+
+.min-w-8 {
+  min-width: 2rem;
+}
