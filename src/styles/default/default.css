@@ -1,0 +1,21 @@
+:root {
+  --angel_primary: #439EFF;
+
+  --angel_white: #FFF;
+  --angel_black: #000;
+
+  --angel_yellow_100: #FFB800;
+  --angel_yellow_200: #FFA300;
+  --angel_yellow_300: #FF9100;
+  --angel_yellow_400: #FF7F00;
+
+  --angel_blue_25: #f0f8ff;
+  --angel_blue_50: #70A4D4;
+  --angel_blue_100: #143D63;
+  --angel_blue_50_op25: rgba(112, 164, 212, .24);
+  --angel_blue_100_op53: rgba(20, 61, 99, 0.53);
+
+  --angel_gray_100: #9ca3af;
+
+  --angel_red_100: #ff434c;
+}
