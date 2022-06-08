@@ -1,21 +1,21 @@
 .bg-angelBlue\.05 {
-  background-color: #f0f8ff;
+  background-color: var(--angel_blue_25);
 }
 
 .bg-angelBlue\.25Full {
-  background-color: #70A4D4;
+  background-color: var(--angel_blue_50);
 }
 
 .bg-angelBlue\.25 {
-  background-color: rgba(112, 164, 212, .24);
+  background-color: var(--angel_blue_50_op25);
 }
 
 .bg-angelYellow {
-  background-color: #FFB800;
-  border-color: #FFB800;
+  background-color: var(--angel_yellow_100);
+  border-color: var(--angel_yellow_100);
 }
 
 .bg-angelRedM {
-  background-color: #ff434c;
-  border-color: #ff434c;
+  background-color: var(--angel_red_100);
+  border-color: var(--angel_red_100);
 }
