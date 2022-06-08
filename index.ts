@@ -7,3 +7,5 @@ export { default as Row } from "./src/components/Row";
 export { default as Column } from "./src/components/Column";
 export { default as Accordion } from "./src/components/Accordion";
 export { default as Toast } from "./src/components/Toast";
+// ----------- CONTEXTS -----------
+export { default as AngelProvider } from "./src/contexts/src/AngelProvider";
