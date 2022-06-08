@@ -12,10 +12,10 @@
   width: 0.78rem;
   height: 0.78rem;
   margin: .15rem;
-  border: .15rem solid #fff;
+  border: .15rem solid var(--angel_white);
   border-radius: 50%;
   animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: var(--angel_white) transparent transparent transparent;
 }
 .spinner-ring-sm div:nth-child(1) {
   animation-delay: -0.45s;

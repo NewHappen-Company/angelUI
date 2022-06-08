@@ -1,12 +1,11 @@
 .text-angelYellow {
-  color: #FFB800;
+  color: var(--angel_yellow_100);
 }
 
 .text-angelBlueTitle {
-  color: #143D63;
+  color: var(--angel_blue_100);
 }
 
 .text-angelBlueSubtitle {
-  color: #143D63;
-  opacity: .53;
+  color: var(--angel_blue_100_op53);
 }

@@ -1,4 +1,6 @@
 import './tailwind.css';
+// ---- DEFAULT -----------------
+import './default/default.css';
 // ------------------------------
 import './sizes';
 import './spacings';

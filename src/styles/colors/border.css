@@ -1,5 +1,5 @@
 .border-angel {
-  border-color: #439EFF;
+  border-color: var(--angel_primary);
 }
 
 .border-transparent {
@@ -7,9 +7,9 @@
 }
 
 .border-angelYellow {
-  border-color: #FFB800;
+  border-color: var(--angel_yellow_100);
 }
 
 .border-angelRed {
-  border-color: #ff434c;
+  border-color: var(--angel_red_100);
 }
