@@ -107,8 +107,5 @@
   },
   "resolutions": {
     "postcss": "8"
-  },
-  "config": {
-    
   }
 }
