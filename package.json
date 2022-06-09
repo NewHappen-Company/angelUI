@@ -16,6 +16,7 @@
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "prepare": "husky install",
+    "cm": "cz",
     "build-storybook": "build-storybook",
     "build:tailwind": "postcss src/components/Button/button.css -o src/components/Button/tailwind.css"
   },
@@ -50,6 +51,7 @@
     "cross-env": "^7.0.3",
     "customizable-gitmoji-cli": "^2.0.0-2",
     "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "^6.3.0",
     "cz-emoji": "^1.3.1",
     "cz-gitmoji": "^0.0.7",
     "cz-gitmoji-customize": "^1.2.5",
@@ -107,5 +109,10 @@
   },
   "resolutions": {
     "postcss": "8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
   }
 }
