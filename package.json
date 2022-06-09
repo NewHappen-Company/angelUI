@@ -5,11 +5,6 @@
     "type": "git",
     "url": "https://github.com/NewHappen-Company/angelUI.git"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo 'ola'"
-    }
-  },
   "lint-staged": {
     "*.tsx": [
       "eslint --fix",
@@ -21,6 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
+    "prepare": "husky install",
     "build-storybook": "build-storybook",
     "build:tailwind": "postcss src/components/Button/button.css -o src/components/Button/tailwind.css"
   },
