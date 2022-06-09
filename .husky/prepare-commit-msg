@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-exec < /dev/tty && git cz --hook || true
+#!/bin/sh
+# gitmoji as a commit hook
+exec < /dev/tty
+gitmoji --hook $1 $2
