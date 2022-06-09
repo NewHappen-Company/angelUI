@@ -112,7 +112,8 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-customizable"
+      "path": "cz-customizable",
+      "disableScopeLowerCase": true
     }
   }
 }
