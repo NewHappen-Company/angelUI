@@ -21,6 +21,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": [
             "error",
             { "extensions": [".js", ".tsx"] }
@@ -37,6 +38,11 @@
         ],
         "arrow-body-style": "off",
         "no-use-before-define": "off",
+        "no-nested-ternary": "off",
+        "react/button-has-type": "off",
+        "react/require-default-props": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
         "@typescript-eslint/no-use-before-define": ["error"]
     },
     "settings": {

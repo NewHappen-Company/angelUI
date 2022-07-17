@@ -4,4 +4,3 @@ import './minWidth.css';
 import './minHeight.css';
 import './maxWidth.css';
 import './maxHeight.css';
-import './maxWidth.css';

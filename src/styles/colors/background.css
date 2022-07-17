@@ -19,3 +19,11 @@
   background-color: var(--angel_red_100);
   border-color: var(--angel_red_100);
 }
+
+.bg-slate-100 {
+  background-color: var(--angel_slate_100);
+}
+
+.bg-green {
+  background-color: var(--angel_green_100);
+}

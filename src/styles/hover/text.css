@@ -1,0 +1,11 @@
+.hover\:text-angelYellow:hover {
+  color: var(--angel_yellow_100);
+}
+
+.hover\:text-angelBlueTitle:hover {
+  color: var(--angel_blue_100);
+}
+
+.hover\:text-angelBlueSubtitle:hover {
+  color: var(--angel_blue_100_op53);
+}

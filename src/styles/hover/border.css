@@ -1,0 +1,15 @@
+.hover\:border-angelYellow:hover {
+  border-color: var(--angel_yellow_100);
+}
+
+.hover\:border-transparent:hover {
+  border-color: transparent;
+}
+
+.hover\:border-angelYellow:hover {
+  border-color: var(--angel_yellow_100);
+}
+
+.hover\:border-angelRed:hover {
+  border-color: var(--angel_red_100);
+}
