@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 export default interface IDefaultProps {
   w?: 'w-0' | 'w-px' | 'w-0.5' | 'w-1' | 'w-1.5' | 'w-2' | 'w-2.5' | 'w-3' | 'w-3.5' | 'w-4' | 'w-5' | 'w-6' | 'w-7' | 'w-8' | 'w-9' | 'w-10' | 'w-11' | 'w-12' | 'w-14' | 'w-16' | 'w-20' | 'w-24' | 'w-28' | 'w-32' | 'w-36' | 'w-40' | 'w-44' | 'w-48' | 'w-52' | 'w-56' | 'w-60' | 'w-64' | 'w-72' | 'w-80' | 'w-96' | 'w-full' | 'w-screen' | 'w-1/2';
   width?: 'w-0' | 'w-px' | 'w-0.5' | 'w-1' | 'w-1.5' | 'w-2' | 'w-2.5' | 'w-3' | 'w-3.5' | 'w-4' | 'w-5' | 'w-6' | 'w-7' | 'w-8' | 'w-9' | 'w-10' | 'w-11' | 'w-12' | 'w-14' | 'w-16' | 'w-20' | 'w-24' | 'w-28' | 'w-32' | 'w-36' | 'w-40' | 'w-44' | 'w-48' | 'w-52' | 'w-56' | 'w-60' | 'w-64' | 'w-72' | 'w-80' | 'w-96' | 'w-full' | 'w-screen' | 'w-1/2';
@@ -28,4 +29,10 @@ export default interface IDefaultProps {
   ml?: 'ml-0' | 'ml-px' | 'ml-0.5' | 'ml-1' | 'ml-1.5' | 'ml-2' | 'ml-2.5' | 'ml-3' | 'ml-3.5' | 'ml-4' | 'ml-5' | 'ml-6' | 'ml-7' | 'ml-8' | 'ml-9' | 'ml-10';
 
   bg?: 'bg-black' | 'bg-white' | 'bg-angel' | 'bg-angelWhite' | 'bg-angelYellow' | 'bg-angelRedM' | string;
+
+  borderColor?: 'border-angel' | 'border-angelTransparent' | 'border-angelYellow' | 'border-angelRedM' | string;
+
+  hoverBorderColor?: 'hover:border-angel' | 'hover:border-angelTransparent' | 'hover:border-angelYellow' | 'hover:border-angelRedM' | string;
+
+  hoverText?: 'hover:text-angelTitle' | 'hover:text-angelSubtitle' | 'hover:text-angelYellow' | string;
 }
