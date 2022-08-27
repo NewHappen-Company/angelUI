@@ -39,6 +39,7 @@
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
     "@types/react": "^18.0.10",
+    "@types/styled-components": "^5.1.26",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
@@ -99,14 +100,15 @@
     "react-dom": ">=18"
   },
   "dependencies": {
+    "@storybook/react": "^6.4.19",
     "codesandbox": "^2.2.3",
     "postcss-cli": "^9.1.0",
     "react-icons": "^4.4.0",
     "react-spring": "^9.4.5",
     "rollup-plugin-postcss": "^4.0.2",
+    "styled-components": "^5.3.5",
     "uuid": "^8.3.2",
-    "webpack": "^5.69.1",
-    "@storybook/react": "^6.4.19"
+    "webpack": "^5.69.1"
   },
   "resolutions": {
     "postcss": "8"
