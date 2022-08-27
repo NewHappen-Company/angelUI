@@ -20,6 +20,11 @@ const Button = ({
   pr,
   pt,
   pb,
+  m,
+  ml,
+  mr,
+  mt,
+  mb,
   minWidth,
   borderStyle,
   borderSize,
@@ -44,6 +49,11 @@ const Button = ({
         pb={pb}
         pl={pl}
         pr={pr}
+        m={m}
+        mt={mt}
+        mb={mb}
+        ml={ml}
+        mr={mr}
         minWidth={minWidth}
         borderSize={borderSize}
         cursor={cursor}
@@ -75,6 +85,11 @@ const Button = ({
         pb={pb}
         pl={pl}
         pr={pr}
+        m={m}
+        mt={mt}
+        mb={mb}
+        ml={ml}
+        mr={mr}
         minWidth={minWidth}
         borderSize={borderSize}
         cursor={cursor}
@@ -106,6 +121,11 @@ const Button = ({
         pb={pb}
         pl={pl}
         pr={pr}
+        m={m}
+        mt={mt}
+        mb={mb}
+        ml={ml}
+        mr={mr}
         minWidth={minWidth}
         cursor={cursor}
         radius={radius}
@@ -135,6 +155,11 @@ const Button = ({
         pb={pb}
         pl={pl}
         pr={pr}
+        m={m}
+        mt={mt}
+        mb={mb}
+        ml={ml}
+        mr={mr}
         minWidth={minWidth}
         cursor={cursor}
         radius={radius}
@@ -164,6 +189,11 @@ const Button = ({
         pb={pb}
         pl={pl}
         pr={pr}
+        m={m}
+        mt={mt}
+        mb={mb}
+        ml={ml}
+        mr={mr}
         minWidth={minWidth}
         cursor={cursor}
         radius={radius}
@@ -195,6 +225,11 @@ const Button = ({
       pb={pb}
       pl={pl}
       pr={pr}
+      m={m}
+      mt={mt}
+      mb={mb}
+      ml={ml}
+      mr={mr}
       minWidth={minWidth}
       borderStyle={borderStyle}
       borderSize={borderSize}
