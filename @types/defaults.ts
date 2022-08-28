@@ -44,6 +44,11 @@ export interface IAngelDefaultProps {
   pt?: number;
   pb?: number;
   p?: number;
+  ml?: number;
+  mr?: number;
+  mt?: number;
+  mb?: number;
+  m?: number;
   minWidth?: 'fit-content' | 'max-content' | 'min-content';
   borderStyle?: 'none' | 'dotted' | 'dashed' | 'solid' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | 'hidden';
   borderSize?: number;
@@ -53,4 +58,10 @@ export interface IAngelDefaultProps {
   borderColor?: string;
   width?: number;
   height?: number;
+}
+
+export interface IResp {
+  resp?: number;
+  height?: number;
+  txtColor?: string;
 }
