@@ -59,7 +59,6 @@ export interface IAngelDefaultProps {
   width?: number;
   height?: number;
 }
-
 export interface IResp {
   resp?: number;
   height?: number;
