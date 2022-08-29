@@ -60,7 +60,6 @@ export interface IAngelDefaultProps {
   height?: number;
 }
 export interface IResp {
-  resp?: number;
   height?: number;
   txtColor?: string;
 }

@@ -5,13 +5,13 @@ const overlayAnimation = keyframes`
   0% { height: 0; display: none; background: transparent; opacity: 0; }
   100% { 
     height: 100%; 
-    background: #fff; 
+    background: #f2f2f2; 
     opacity: 1; 
   }
 `;
 
 const overlayAnimationOut = keyframes`
-  0% { height: 100%; display: flex; background: #fff; opacity: 1; }
+  0% { height: 100%; display: flex; background: #f2f2f2; opacity: 1; }
   100% { height: 0; display: none; background: transparent; opacity: 0; }
 `;
 
@@ -57,7 +57,13 @@ export const AngelHeaderNormalDiv = styled.div<IResp>`
   width: 100%;
 
   nav {
-    display: ${(props) => props.resp && props.resp <= 640 && 'none'};
+    display: flex;
+  }
+
+  @media(max-width: 640px) {
+    nav {
+      display: none;
+    }
   }
 `;
 
@@ -68,15 +74,29 @@ export const AngelHeaderNormalDivInRight = styled.div<IResp>`
   justify-content: flex-end;
 
   nav {
-    display: ${(props) => props.resp && props.resp <= 640 && 'none'};
+    display: flex;
   }
 
   button {
-    display: ${(props) => props.resp && props.resp <= 640 && 'none'};
+    display: flex;
   }
 
   #menuForHeader {
-    display: ${(props) => (props.resp && props.resp > 640 ? 'none' : 'flex')};
+    display: none;
+  }
+
+  @media(max-width: 640px) {
+    nav {
+      display: none;
+    }
+
+    button {
+      display: none;
+    }
+
+    #menuForHeader {
+      display: flex;
+    }
   }
 `;
 
@@ -157,6 +177,12 @@ export const AngelHamburguerIcon = styled.div<IAngelDefaultProps>`
   &#open >*::after {
     transform: rotate(-45deg) translate(12px, 12px);
   }
+
+  @media(max-width: 640px) {
+    &#open >*::before, &#open >*::after {
+      background: #222222;
+    }
+  }
 `;
 
 export const AngelHeaderOverlay = styled.div<IResp>`
@@ -188,12 +214,18 @@ export const AngelHeaderOverlay = styled.div<IResp>`
   }
 
   >* {
+    width: 100%;
+    text-align: center;
     margin-bottom: .5rem;
     color: ${(props) => props.txtColor || '#222222'};
     transition-property: all;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     transition-delay: 150ms;
     transition-duration: 300ms;
+  }
+
+  button:first-of-type {
+    margin-top: 10px;
   }
 
   >*:hover {

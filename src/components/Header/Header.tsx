@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import { angelBlue } from '../../../@types/colors';
 import { IAngelDefaultProps } from '../../../@types/defaults';
-import getResponsive from '../../utils/src/getResponsive';
 import Button, { IButtonProps } from '../Button/Button';
 import {
   AngelHamburguer,
@@ -65,7 +64,6 @@ const Header = ({
   const [menuOpen, setMenuOpen] = useState(false);
   const [openOverlay, setOpenOverlay] = useState('initial_overlay');
   const [heightHeader, setHeightHeader] = useState(0);
-  const getSize = getResponsive();
 
   const animationHamburger = () => {
     if (!menuOpen === false) {
@@ -134,7 +132,7 @@ const Header = ({
           pt={pt}
           pb={pb}
         >
-          <AngelHeaderNormalDiv resp={getSize.width}>
+          <AngelHeaderNormalDiv>
             { redirectOnClickLogo ? (
               <button onClick={redirectOnClickLogo}>
                 {logo}
@@ -147,7 +145,7 @@ const Header = ({
             ) }
           </AngelHeaderNormalDiv>
 
-          <AngelHeaderNormalDivInRight resp={getSize.width}>
+          <AngelHeaderNormalDivInRight>
             { navPosition === 'right' && (
               <AngelHeaderNav txtColor={txtColor}>
                 {children}
