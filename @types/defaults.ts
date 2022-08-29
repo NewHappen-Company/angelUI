@@ -36,3 +36,31 @@ export default interface IDefaultProps {
 
   hoverText?: 'hover:text-angelTitle' | 'hover:text-angelSubtitle' | 'hover:text-angelYellow' | string;
 }
+
+export interface IAngelDefaultProps {
+  bg?: string;
+  pl?: number;
+  pr?: number;
+  pt?: number;
+  pb?: number;
+  p?: number;
+  ml?: number;
+  mr?: number;
+  mt?: number;
+  mb?: number;
+  m?: number;
+  minWidth?: 'fit-content' | 'max-content' | 'min-content';
+  borderStyle?: 'none' | 'dotted' | 'dashed' | 'solid' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | 'hidden';
+  borderSize?: number;
+  cursor?: 'auto' | 'pointer' | 'default' | 'wait' | 'text' | 'move' | 'help' | 'not-allowed' | 'none' | 'context-menu' | 'progress' | 'cell' | 'crosshair' | 'vertical-text' | 'alias' | 'copy' | 'no-drop' | 'grab' | 'grabbing' | 'all-scroll' | 'col-resize' | 'row-resize' | 'n-resize' | 'e-resize' | 's-resize' | 'w-resize' | 'ne-resize' | 'nw-resize' | 'se-resize' | 'sw-resize' | 'ew-resize' | 'ns-resize' | 'nesw-resize' | 'nwse-resize' | 'zoom-in' | 'zoom-out';
+  radius?: string | 'full' | 'none';
+  txtColor?: string;
+  borderColor?: string;
+  width?: number;
+  height?: number;
+}
+export interface IResp {
+  resp?: number;
+  height?: number;
+  txtColor?: string;
+}

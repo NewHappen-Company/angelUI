@@ -1,15 +1,20 @@
 import React, {
-  DetailedHTMLProps, HTMLAttributes, ReactNode,
+  DetailedHTMLProps, HTMLAttributes, ReactNode, useState,
 } from 'react';
-import { FiMenu } from 'react-icons/fi';
-import IDefaultProps from '../../../@types/defaults';
+import { angelBlue } from '../../../@types/colors';
+import { IAngelDefaultProps } from '../../../@types/defaults';
 import getResponsive from '../../utils/src/getResponsive';
-import Button from '../Button';
-import { IButtonProps } from '../Button/Button';
-import IconButton from '../IconButton';
+import Button, { IButtonProps } from '../Button/Button';
+import {
+  AngelHamburguer,
+  AngelHamburguerIcon,
+  AngelHeader, AngelHeaderNav, AngelHeaderNormalDiv, AngelHeaderNormalDivInRight,
+  AngelHeaderOverlay,
+  AngelHeaderWrapper,
+} from './styles';
 
 interface IOptionButton extends IButtonProps {}
-type IOptionButtonStyle = IOptionButton & IDefaultProps;
+type IOptionButtonStyle = IOptionButton & IAngelDefaultProps;
 
 export interface IHeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>{
   buttonStyleOne?: IOptionButtonStyle;
@@ -19,74 +24,145 @@ export interface IHeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLEleme
   buttonOneClick?: () => void;
   buttonTwoClick?: () => void;
   redirectOnClickLogo?: () => void;
+  navPosition?: 'left' | 'right';
   children?: ReactNode;
   logo?: ReactNode;
 }
 
-type IAngelHeaderProps = IHeaderProps & IDefaultProps;
+type IAngelHeaderProps = IHeaderProps &
+Omit<IAngelDefaultProps,
+'minWidth' | 'maxWidth' | 'minHeight' |
+'maxHeight' | 'borderStyle' | 'borderSize' |
+'cursor' | 'radius' | 'borderColor'
+>;
 
 const Header = ({
-  buttonStyleOne,
-  buttonOneText,
-  buttonStyleTwo,
   buttonTwoText,
-  buttonOneClick,
+  buttonStyleTwo,
   buttonTwoClick,
+  buttonStyleOne,
+  buttonOneClick,
+  buttonOneText,
   redirectOnClickLogo,
-  h,
-  w,
-  maxHeight,
-  maxWidth,
+  logo,
+  bg,
+  height,
+  width,
   p,
-  px,
-  py,
   pt,
   pb,
   pl,
   pr,
   m,
-  mx,
-  my,
   mt,
   mb,
-  ml,
   mr,
-  minHeight,
-  minWidth,
-  bg,
-  logo,
+  ml,
+  txtColor,
+  navPosition = 'left',
   children,
 }: IAngelHeaderProps) => {
-  const stylePointer = `h-16 ${redirectOnClickLogo && 'pointer'}`;
-  const style = 'flex w-full items-center justify-center';
-  const defaults = `${bg} ${w} ${h || 'h-24'} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px || 'px-4'} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
-
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openOverlay, setOpenOverlay] = useState('initial_overlay');
+  const [heightHeader, setHeightHeader] = useState(0);
   const getSize = getResponsive();
 
-  if (getSize.width !== 640) {
-    return (
-      <header className={`${style} ${defaults}`}>
-        <div className="flex w-full max-w-6xl justify-between">
-          <div className="flex items-center">
+  const animationHamburger = () => {
+    if (!menuOpen === false) {
+      setOpenOverlay('over_close');
+    } else {
+      setOpenOverlay('over_open');
+    }
+    setMenuOpen(!menuOpen);
+    const h = document.querySelector('header');
+    if (h) {
+      setHeightHeader(h.offsetHeight);
+    }
+  };
+
+  return (
+    <>
+      <AngelHeaderOverlay
+        id={`${openOverlay || 'initial_overlay'}`}
+        height={heightHeader}
+      >
+        { children }
+        { buttonTwoText && (
+          <Button
+            btnType={buttonStyleTwo?.btnType || 'outlined'}
+            radius={buttonStyleTwo?.radius || 'full'}
+            borderColor={buttonStyleTwo?.borderColor || angelBlue}
+            txtColor={buttonStyleTwo?.txtColor || `${angelBlue} !important`}
+            mr={buttonStyleTwo?.mr || 4}
+            pl={buttonStyleTwo?.pl || 6}
+            pr={buttonStyleTwo?.pr || 6}
+            {...buttonStyleTwo}
+            onClick={buttonTwoClick}
+          >
+            {buttonTwoText}
+          </Button>
+        ) }
+        <Button
+          btnType={buttonStyleOne?.btnType || 'primary'}
+          radius={buttonStyleOne?.radius || 'full'}
+          txtColor={buttonStyleTwo?.txtColor || '#FFF !important'}
+          pl={buttonStyleOne?.pl || 6}
+          pr={buttonStyleOne?.pr || 6}
+          {...buttonStyleOne}
+          onClick={buttonOneClick}
+        >
+          {buttonOneText || 'Opção 1'}
+        </Button>
+      </AngelHeaderOverlay>
+      <AngelHeader
+        bg={bg}
+        height={height}
+        width={width}
+        m={m}
+        ml={ml}
+        mr={mr}
+        mt={mt}
+        mb={mb}
+        p={p}
+        pt={pt}
+        pb={pb}
+      >
+        <AngelHeaderWrapper
+          p={p}
+          pl={pl}
+          pr={pr}
+          pt={pt}
+          pb={pb}
+        >
+          <AngelHeaderNormalDiv resp={getSize.width}>
             { redirectOnClickLogo ? (
-              <button onClick={redirectOnClickLogo} className={stylePointer}>
+              <button onClick={redirectOnClickLogo}>
                 {logo}
               </button>
             ) : logo }
-            <nav className="mr-4">
-              {children}
-            </nav>
-          </div>
+            { navPosition === 'left' && (
+              <AngelHeaderNav txtColor={txtColor}>
+                {children}
+              </AngelHeaderNav>
+            ) }
+          </AngelHeaderNormalDiv>
 
-          <div className="flex items-center">
+          <AngelHeaderNormalDivInRight resp={getSize.width}>
+            { navPosition === 'right' && (
+              <AngelHeaderNav txtColor={txtColor}>
+                {children}
+              </AngelHeaderNav>
+            ) }
             { buttonTwoText && (
               <Button
-                mr="mr-4"
-                rounded
-                shape="round"
                 btnType={buttonStyleTwo?.btnType || 'outlined'}
-                w="w-36"
-                h="h-10"
+                radius={buttonStyleTwo?.radius || 'full'}
+                borderColor={buttonStyleTwo?.borderColor || angelBlue}
+                txtColor={buttonStyleTwo?.txtColor || angelBlue}
+                ml={buttonStyleTwo?.ml || 4}
+                mr={buttonStyleTwo?.mr || 4}
+                pl={buttonStyleTwo?.pl || 6}
+                pr={buttonStyleTwo?.pr || 6}
                 {...buttonStyleTwo}
                 onClick={buttonTwoClick}
               >
@@ -94,37 +170,28 @@ const Header = ({
               </Button>
             ) }
             <Button
-              mr="mr-4"
-              rounded
-              shape="round"
               btnType={buttonStyleOne?.btnType || 'primary'}
-              w="w-36"
-              h="h-10"
+              radius={buttonStyleOne?.radius || 'full'}
+              pl={buttonStyleOne?.pl || 6}
+              pr={buttonStyleOne?.pr || 6}
               {...buttonStyleOne}
               onClick={buttonOneClick}
             >
               {buttonOneText || 'Opção 1'}
             </Button>
-          </div>
-        </div>
-      </header>
-    );
-  }
-  return (
-    <header className={`${style} ${defaults}`}>
-      <div className="flex w-full max-w-6xl justify-between">
-        <div className="flex items-center">
-          <IconButton bg="bg-gray">
-            <FiMenu />
-          </IconButton>
-          { redirectOnClickLogo ? (
-            <button onClick={redirectOnClickLogo}>
-              {logo}
-            </button>
-          ) : logo }
-        </div>
-      </div>
-    </header>
+            <AngelHamburguer id="menuForHeader">
+              <AngelHamburguerIcon
+                txtColor={txtColor}
+                id={`${menuOpen ? 'open' : 'close'}`}
+                onClick={animationHamburger}
+              >
+                <div />
+              </AngelHamburguerIcon>
+            </AngelHamburguer>
+          </AngelHeaderNormalDivInRight>
+        </AngelHeaderWrapper>
+      </AngelHeader>
+    </>
   );
 };
 
