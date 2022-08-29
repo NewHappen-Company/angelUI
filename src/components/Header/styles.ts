@@ -26,11 +26,14 @@ export const AngelHeader = styled.header<IAngelDefaultProps>`
   background: ${(props) => props.bg && props.bg};
   height: ${(props) => (props.height ? `${props.height / 4}rem` : 'auto')};
   width: ${(props) => (props.width ? `${props.width / 4}rem` : '100%')};
-  margin: ${(props) => (props.m ? `${props.m / 4}rem` : '0rem 0rem 0rem 0rem')};
-  margin-left: ${(props) => (props.ml && `${props.ml / 4}rem`)};
-  margin-right: ${(props) => (props.mr && `${props.mr / 4}rem`)};
-  margin-top: ${(props) => (props.mt && `${props.mt / 4}rem`)};
-  margin-bottom: ${(props) => (props.mb && `${props.mb / 4}rem`)};
+  padding-left: ${(props) => (props.pl && props.pl !== 0 ? `${props.pl / 4}rem` : props.p ? `${props.p / 4}rem` : '0rem')};
+  padding-right: ${(props) => (props.pr && props.pr !== 0 ? `${props.pr / 4}rem` : props.p ? `${props.p / 4}rem` : '0rem')};
+  padding-top: ${(props) => (props.pt && props.pt !== 0 ? `${props.pt / 4}rem` : props.p ? `${props.p / 4}rem` : '0rem')};
+  padding-bottom: ${(props) => (props.pb && props.pb !== 0 ? `${props.pb / 4}rem` : props.p ? `${props.p / 4}rem` : '0rem')};
+  margin-left: ${(props) => (props.ml && props.ml !== 0 ? `${props.ml / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
+  margin-right: ${(props) => (props.mr && props.mr !== 0 ? `${props.mr / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
+  margin-top: ${(props) => (props.mt && props.mt !== 0 ? `${props.mt / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
+  margin-bottom: ${(props) => (props.mb && props.mb !== 0 ? `${props.mb / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
 `;
 
 export const AngelHeaderWrapper = styled.div<IAngelDefaultProps>`
@@ -38,11 +41,14 @@ export const AngelHeaderWrapper = styled.div<IAngelDefaultProps>`
   width: 100%;
   max-width: 72rem;
   justify-content: space-between;
-  padding: ${(props) => (props.p ? `${props.p / 4}rem` : '0.5rem 1rem 0.5rem 1rem')};
-  padding-left: ${(props) => (props.pl && `${props.pl / 4}rem`)};
-  padding-right: ${(props) => (props.pr && `${props.pr / 4}rem`)};
-  padding-top: ${(props) => (props.pt && `${props.pt / 4}rem`)};
-  padding-bottom: ${(props) => (props.pb && `${props.pb / 4}rem`)};
+  padding-left: ${(props) => (props.pl && props.pl !== 0 ? `${props.pl / 4}rem` : props.p ? `${props.p / 4}rem` : '1rem')};
+  padding-right: ${(props) => (props.pr && props.pr !== 0 ? `${props.pr / 4}rem` : props.p ? `${props.p / 4}rem` : '1rem')};
+  padding-top: ${(props) => (props.pt && props.pt !== 0 ? `${props.pt / 4}rem` : props.p ? `${props.p / 4}rem` : '0.5rem')};
+  padding-bottom: ${(props) => (props.pb && props.pb !== 0 ? `${props.pb / 4}rem` : props.p ? `${props.p / 4}rem` : '0.5rem')};
+  margin-left: ${(props) => (props.ml && props.ml !== 0 ? `${props.ml / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
+  margin-right: ${(props) => (props.mr && props.mr !== 0 ? `${props.mr / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
+  margin-top: ${(props) => (props.mt && props.mt !== 0 ? `${props.mt / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
+  margin-bottom: ${(props) => (props.mb && props.mb !== 0 ? `${props.mb / 4}rem` : props.m ? `${props.m / 4}rem` : '0rem')};
 `;
 
 export const AngelHeaderNormalDiv = styled.div<IResp>`
