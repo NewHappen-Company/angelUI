@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-param-reassign */
 import React, {
-  DetailedHTMLProps, HTMLAttributes, ReactNode, useState,
+  DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect, useState,
 } from 'react';
 import { angelBlue } from '../../../@types/colors';
 import { IAngelDefaultProps } from '../../../@types/defaults';
 import Button, { IButtonProps } from '../Button/Button';
 import {
+  AngelAnchorForButton,
   AngelHamburguer,
   AngelHamburguerIcon,
   AngelHeader, AngelHeaderNav, AngelHeaderNormalDiv, AngelHeaderNormalDivInRight,
@@ -80,6 +83,28 @@ const Header = ({
     }
   };
 
+  const findParentByTagName = (el: any, tagName: string) => {
+    let parent = el;
+    while (parent !== null && parent.tagName !== tagName.toUpperCase()) {
+      parent = parent.parentNode;
+    }
+
+    return parent;
+  };
+
+  const handleAnchorClick = (e: any) => {
+    e = e || window.event;
+    if (findParentByTagName(e.target || e.srcElement, 'A')) {
+      e.preventDefault();
+      setOpenOverlay('over_close');
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleAnchorClick, false);
+  }, []);
+
   return (
     <>
       <AngelHeaderOverlay
@@ -88,31 +113,37 @@ const Header = ({
       >
         { children }
         { buttonTwoText && (
-          <Button
-            btnType={buttonStyleTwo?.btnType || 'outlined'}
-            radius={buttonStyleTwo?.radius || 'full'}
-            borderColor={buttonStyleTwo?.borderColor || angelBlue}
-            txtColor={buttonStyleTwo?.txtColor || `${angelBlue} !important`}
-            mr={buttonStyleTwo?.mr || 4}
-            pl={buttonStyleTwo?.pl || 6}
-            pr={buttonStyleTwo?.pr || 6}
-            {...buttonStyleTwo}
-            onClick={buttonTwoClick}
-          >
-            {buttonTwoText}
-          </Button>
+          <AngelAnchorForButton style={{ width: '100%' }}>
+            <Button
+              btnType={buttonStyleTwo?.btnType || 'outlined'}
+              radius={buttonStyleTwo?.radius || 'full'}
+              borderColor={buttonStyleTwo?.borderColor || angelBlue}
+              txtColor={buttonStyleTwo?.txtColor || `${angelBlue} !important`}
+              mr={buttonStyleTwo?.mr || 4}
+              pl={buttonStyleTwo?.pl || 6}
+              pr={buttonStyleTwo?.pr || 6}
+              style={{ width: '100%' }}
+              {...buttonStyleTwo}
+              onClick={buttonTwoClick}
+            >
+              {buttonTwoText}
+            </Button>
+          </AngelAnchorForButton>
         ) }
-        <Button
-          btnType={buttonStyleOne?.btnType || 'primary'}
-          radius={buttonStyleOne?.radius || 'full'}
-          txtColor={buttonStyleTwo?.txtColor || '#FFF !important'}
-          pl={buttonStyleOne?.pl || 6}
-          pr={buttonStyleOne?.pr || 6}
-          {...buttonStyleOne}
-          onClick={buttonOneClick}
-        >
-          {buttonOneText || 'Opção 1'}
-        </Button>
+        <AngelAnchorForButton style={{ width: '100%' }}>
+          <Button
+            btnType={buttonStyleOne?.btnType || 'primary'}
+            radius={buttonStyleOne?.radius || 'full'}
+            txtColor={buttonStyleTwo?.txtColor || '#FFF !important'}
+            pl={buttonStyleOne?.pl || 6}
+            pr={buttonStyleOne?.pr || 6}
+            style={{ width: '100%' }}
+            {...buttonStyleOne}
+            onClick={buttonOneClick}
+          >
+            {buttonOneText || 'Opção 1'}
+          </Button>
+        </AngelAnchorForButton>
       </AngelHeaderOverlay>
       <AngelHeader
         bg={bg}

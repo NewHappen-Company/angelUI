@@ -235,3 +235,5 @@ export const AngelHeaderOverlay = styled.div<IResp>`
     opacity: .75;
   }
 `;
+
+export const AngelAnchorForButton = styled.a<IAngelDefaultProps>``;

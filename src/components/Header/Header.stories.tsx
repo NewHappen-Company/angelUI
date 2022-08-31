@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import React from 'react';
@@ -32,10 +33,10 @@ HeaderDisplay.args = {
   />),
   children: (
     <>
-      <a href="sobre">Sobre</a>
-      <a href="produtos">Produtos</a>
-      <a href="duvidas">Dúvidas</a>
-      <a href="componentes">Componentes</a>
+      <a href="#">Sobre</a>
+      <a href="#">Produtos</a>
+      <a href="#">Dúvidas</a>
+      <a href="#">Componentes</a>
     </>
   ),
   redirectOnClickLogo: () => {
