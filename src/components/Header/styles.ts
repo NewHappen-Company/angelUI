@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { IAngelDefaultProps, IResp } from '../../../@types/defaults';
 
+type IAngelHeaderProps = IAngelDefaultProps & IResp;
+
 const overlayAnimation = keyframes`
   0% { height: 0; display: none; background: transparent; opacity: 0; }
   100% { 
@@ -60,7 +62,7 @@ export const AngelHeaderNormalDiv = styled.div<IResp>`
     display: flex;
   }
 
-  @media(max-width: 640px) {
+  @media(max-width: ${(props) => (props.breakpoint ? props.breakpoint : 640)}px) {
     nav {
       display: none;
     }
@@ -85,7 +87,7 @@ export const AngelHeaderNormalDivInRight = styled.div<IResp>`
     display: none;
   }
 
-  @media(max-width: 640px) {
+  @media(max-width: ${(props) => (props.breakpoint ? props.breakpoint : 640)}px) {
     nav {
       display: none;
     }
@@ -124,7 +126,7 @@ export const AngelHeaderNav = styled.nav<IAngelDefaultProps>`
 
 export const AngelHamburguer = styled.button``;
 
-export const AngelHamburguerIcon = styled.div<IAngelDefaultProps>`
+export const AngelHamburguerIcon = styled.div<IAngelHeaderProps>`
   position: relative;
   display: flex;
   justify-content: center;
@@ -178,7 +180,7 @@ export const AngelHamburguerIcon = styled.div<IAngelDefaultProps>`
     transform: rotate(-45deg) translate(12px, 12px);
   }
 
-  @media(max-width: 640px) {
+  @media(max-width: ${(props) => (props.breakpoint ? props.breakpoint : 640)}px) {
     &#open >*::before, &#open >*::after {
       background: #222222;
     }
