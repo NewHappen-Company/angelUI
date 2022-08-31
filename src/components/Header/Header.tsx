@@ -26,6 +26,7 @@ export interface IHeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLEleme
   navPosition?: 'left' | 'right';
   children?: ReactNode;
   logo?: ReactNode;
+  breakpoint?: number;
 }
 
 type IAngelHeaderProps = IHeaderProps &
@@ -60,6 +61,7 @@ const Header = ({
   txtColor,
   navPosition = 'left',
   children,
+  breakpoint,
 }: IAngelHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openOverlay, setOpenOverlay] = useState('initial_overlay');
@@ -132,7 +134,7 @@ const Header = ({
           pt={pt}
           pb={pb}
         >
-          <AngelHeaderNormalDiv>
+          <AngelHeaderNormalDiv breakpoint={breakpoint}>
             { redirectOnClickLogo ? (
               <button onClick={redirectOnClickLogo}>
                 {logo}
@@ -145,7 +147,7 @@ const Header = ({
             ) }
           </AngelHeaderNormalDiv>
 
-          <AngelHeaderNormalDivInRight>
+          <AngelHeaderNormalDivInRight breakpoint={breakpoint}>
             { navPosition === 'right' && (
               <AngelHeaderNav txtColor={txtColor}>
                 {children}
@@ -179,6 +181,7 @@ const Header = ({
             </Button>
             <AngelHamburguer id="menuForHeader">
               <AngelHamburguerIcon
+                breakpoint={breakpoint}
                 txtColor={txtColor}
                 id={`${menuOpen ? 'open' : 'close'}`}
                 onClick={animationHamburger}
