@@ -102,6 +102,7 @@
   "dependencies": {
     "@storybook/react": "^6.4.19",
     "codesandbox": "^2.2.3",
+    "date-fns": "^2.29.2",
     "postcss-cli": "^9.1.0",
     "react-icons": "^4.4.0",
     "react-spring": "^9.4.5",
