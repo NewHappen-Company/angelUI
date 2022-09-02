@@ -95,7 +95,6 @@ const Header = ({
   const handleAnchorClick = (e: any) => {
     e = e || window.event;
     if (findParentByTagName(e.target || e.srcElement, 'A')) {
-      e.preventDefault();
       setOpenOverlay('over_close');
       setMenuOpen(false);
     }
