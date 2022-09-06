@@ -10,6 +10,7 @@ export { default as Accordion } from './src/components/Accordion';
 export { default as Toast } from './src/components/Toast';
 export { default as Header } from './src/components/Header';
 export { default as Adventages } from './src/components/Adventages';
+export { default as Footer } from './src/components/Footer';
 export {
   Modal, ModalBody, ModalFooter, ModalHeader,
 } from './src/components/Modal';
