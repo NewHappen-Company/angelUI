@@ -1,7 +1,7 @@
-import React, { InputHTMLAttributes, useState } from "react";
-import IDefaultProps from "../../../@types/defaults";
-import { useActiveInputProps } from "../../hooks/src/useActiveInput";
-import "../../styles/angel";
+import React, { InputHTMLAttributes } from 'react';
+import IDefaultProps from '../../../@types/defaults';
+import { useActiveInputProps } from '../../hooks/src/useActiveInput';
+import '../../styles/angel';
 
 export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   fontSize?: string;
@@ -35,65 +35,68 @@ const Input = ({
   mr,
   minHeight,
   minWidth,
-  fontSize = "text-sm",
-  bg = "bg-angelWhite",
-  phC = "angelGray",
+  fontSize = 'text-sm',
+  bg = 'angelWhite',
+  phC = 'angelGray',
   legend,
   isFieldset,
   activeColor,
   ...rest
-}: IAngelInputProps) => {  
+}: IAngelInputProps) => {
   const { isActive, onBlur, onFocus } = useActiveInputProps();
-  let borderActiveColor = activeColor ? `border-${activeColor.split('-')[1]}` : 'border-angel';
-  let legendActiveColor = activeColor ? `text-${activeColor.split('-')[1]}` : 'text-angel';
+  const borderActiveColor = activeColor
+    ? `border-${activeColor.split('-')[1]}`
+    : 'border-angel';
+  const legendActiveColor = activeColor
+    ? `text-${activeColor.split('-')[1]}`
+    : 'text-angel';
 
-  let placeholderColor = `placeholder-${phC}`;
+  const placeholderColor = `placeholder-${phC}`;
   const style = `p-4 pb-2 pt-2 rounded font-Poppins ${fontSize} outline-none`;
-  let defaults = `${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
+  const defaults = `bg-${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight} ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
 
   const fieldset = `transition-colors duration-500 px-4 pb-3 pt-1.5 rounded font-Poppins ${fontSize} outline-none border-solid ${
-    isActive ? `${borderActiveColor} border-2` : "border-transparent border-2"
+    isActive ? `${borderActiveColor} border-2` : 'border-transparent border-2'
   }`;
-  
+
   const style2 = `font-Poppins ${fontSize} outline-none w-full`;
-  let defaults2 = `${bg} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight}`;
-  let legendStyle = `text-sm font-Poppins transition-colors duration-500 ${isActive ? legendActiveColor : "legends-Gray"} px-1`
+  const defaults2 = `${bg} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight}`;
+  const legendStyle = `text-sm font-Poppins transition-colors duration-500 ${
+    isActive ? legendActiveColor : 'legends-Gray'
+  } px-1`;
 
   if (!isFieldset) {
     return (
       <input
         className={`
           ${style}
-          ${placeholderColor || "placeholder-angelGray"}
+          ${placeholderColor || 'placeholder-angelGray'}
           ${defaults}
         `}
         {...rest}
       />
     );
-  } else {
-    return (
-      <fieldset
-        className={`
+  }
+  return (
+    <fieldset
+      className={`
           ${defaults}
           ${fieldset}
         `}
-        >
-        <legend className={legendStyle}>
-          {legend || "Label"}
-        </legend>
-        <input
-          className={`
+    >
+      <legend className={legendStyle}>{legend || 'Label'}</legend>
+      <input
+        className={`
             ${style2}
-            ${placeholderColor || "placeholder-angelGray"}
+            ${placeholderColor || 'placeholder-angelGray'}
             ${defaults2}
           `}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          {...rest}
-        />
-      </fieldset>
-    );
-  }
+        onFocus={onFocus}
+        onBlur={onBlur}
+        {...rest}
+      />
+    </fieldset>
+  );
 };
 
 export default Input;
