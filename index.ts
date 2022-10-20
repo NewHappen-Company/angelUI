@@ -11,8 +11,12 @@ export { default as Toast } from './src/components/Toast';
 export { default as Header } from './src/components/Header';
 export { default as Adventages } from './src/components/Adventages';
 export { default as Footer } from './src/components/Footer';
+export { default as Checkbox } from './src/components/Checkbox';
 export {
-  Modal, ModalBody, ModalFooter, ModalHeader,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
 } from './src/components/Modal';
 // ----------- CONTEXTS -----------
 export { default as AngelProvider } from './src/contexts/src/AngelProvider';
