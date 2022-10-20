@@ -1,9 +1,9 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 import IDefaultProps from '../../../@types/defaults';
 import '../../styles/angel';
 
-export interface ICheckboxProps extends HTMLAttributes<HTMLElement> {
+export interface ICheckboxProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fontSize?: string;
   bg?: string;
   isChecked?: boolean;
