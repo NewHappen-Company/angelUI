@@ -3,10 +3,12 @@ import { AiOutlineCheck } from 'react-icons/ai';
 import IDefaultProps from '../../../@types/defaults';
 import '../../styles/angel';
 
-export interface ICheckboxProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ICheckboxProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   fontSize?: string;
   bg?: string;
-  isChecked?: boolean;
+  // eslint-disable-next-line no-unused-vars
+  setIsChecked: (value: boolean) => void;
 }
 
 type IAngelCheckboxProps = ICheckboxProps & IDefaultProps;
@@ -34,7 +36,7 @@ const Checkbox = ({
   minWidth,
   fontSize = 'text-sm',
   bg = 'angelWhite',
-  isChecked,
+  setIsChecked,
   ...rest
 }: IAngelCheckboxProps) => {
   const boxStyle = 'w-4 h-4 rounded items-center justify-center flex';
@@ -42,19 +44,18 @@ const Checkbox = ({
   const defaults = ` ${p} ${px} ${py} ${pt} ${pb} ${pl} ${pr} ${m} ${mx} ${my} ${mt} ${mb} ${ml} ${mr}`;
   const defaultsBox = `bg-${bg} ${w} ${h} ${maxWidth} ${maxHeight} ${minWidth} ${minHeight} ${minWidth} ${minHeight}`;
   const childrenStyle = `${fontSize} ${defaults}`;
-  const [checked, setChecked] = React.useState(isChecked);
+  const [checked, setChecked] = React.useState(false);
 
   return (
     <button
       className={`${containerStyle} ${defaults}`}
-      onClick={() => setChecked(!checked)}
+      onClick={() => {
+        setChecked(!checked);
+        setIsChecked(checked);
+      }}
     >
       <div className={`${boxStyle} ${defaultsBox}`}>
-        {checked ? (
-          <AiOutlineCheck
-            className={`${w} ${h}`}
-          />
-        ) : null}
+        {checked ? <AiOutlineCheck className={`${w} ${h}`} /> : null}
       </div>
       <div className={`${childrenStyle}`}>{rest.children}</div>
     </button>
